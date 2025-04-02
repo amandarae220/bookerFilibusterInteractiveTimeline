@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cory Booker's Filibuster Timer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #222;
+      --accent-color: #a33;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --accent-color: #ff6b6b;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      text-align: center;
+      padding: 2rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      font-size: 2.25rem;
+    }
+
+    .timer, .countdown {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .countdown {
+      font-size: 1.25rem;
+      color: var(--accent-color);
+    }
+
+    .theme-toggle {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: var(--accent-color);
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .celebration {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      animation: pop 1s ease-out forwards;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    iframe {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .timeline-entry {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+      max-width: 600px;
+      margin: 2rem auto;
+      border-left: 4px solid var(--accent-color);
+      background-color: rgba(0, 0, 0, 0.03);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .timeline-entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-header {
+      padding: 1rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      background-color: rgba(0, 0, 0, 0.02);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .timeline-header span {
+      flex: 1;
+      text-align: left;
+    }
+
+    .caret {
+      font-size: 1.25rem;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-entry.open .caret {
+      transform: rotate(180deg);
+    }
+
+    .timeline-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .timeline-entry.open .timeline-content {
+      max-height: 300px;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .timer, .countdown {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      .timer, .countdown {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Cory Booker's Filibuster Timer</h1>
+  <div class="timer">Elapsed Time: <strong>25h 6m 0s</strong></div>
+  <div class="countdown">🎉 Record broken by 48 minutes! 🎉</div>
+
+  <div class="celebration">
+    <p>On Tuesday April 1, 2025 Cory Booker made history with a filibuster lasting <strong>25 hours and 6 minutes</strong>, surpassing the previous record by <strong>48 minutes</strong>.</p>
+    <p>Booker's filibuster was in protest of a bill that would have cut funding for public schools in low-income neighborhoods. The bill was ultimately defeated in the Senate, and Booker's filibuster was credited with helping to sway the vote.</p>
+    <p>Behind the scenes, Booker's team worked tirelessly to make the historic moment possible. They prepared <strong>1,164 pages</strong> of carefully crafted material—more than the entire <em>Harry Potter</em> series combined, or about <strong>ten full-length novels</strong>. All of it was delivered without a teleprompter over the span of 25 continuous hours.</p>
+  </div>
+
+  <!-- Expandable Timeline -->
+  <div id="timeline">
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span>0:00 — Opening Remarks: Booker opens by stating his intent to speak until justice speaks louder.</span>
+        <div class="caret">▼</div>
+      </div>
+      <div class="timeline-content">He expresses frustration with partisan gridlock and invokes a moral obligation to speak out against the proposed education cuts.</div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span>3:12 — Quoting Maya Angelou: He reads from “Still I Rise” and relates it to the proposed legislation.</span>
+        <div class="caret">▼</div>
+      </div>
+      <div class="timeline-content">Booker shares how Angelou's words inspired him during moments of political resistance, linking the poem to the resilience of underserved communities.</div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span>8:45 — Singing “Lean on Me”: A heartfelt moment that draws smiles and attention across the chamber.</span>
+        <div class="caret">▼</div>
+      </div>
+      <div class="timeline-content">He sings softly without music, connecting it to the mutual support needed in times of injustice and civic fatigue.</div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span>14:20 — Letters from Teachers: Reads emotional testimonies from educators in underserved communities.</span>
+        <div class="caret">▼</div>
+      </div>
+      <div class="timeline-content">One teacher described using personal savings to buy books; another shared how reduced funding meant cutting after-school programs.</div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span>17:05 — Reading Dr. Seuss: A dramatic reading from <em>Green Eggs and Ham</em> draws laughter and lightens the mood.</span>
+        <div class="caret">▼</div>
+      </div>
+      <div class="timeline-content">While humorous, the reading symbolized persistence and the absurdity of obstruction for its own sake—a nod to past Senate antics.</div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span>21:30 — Reciting the Constitution: Emphasizes the duty to uphold equity and access to education.</span>
+        <div class="caret">▼</div>
+      </div>
+      <div class="timeline-content">He focuses on the Preamble and Fourteenth Amendment, making the case for education as a fundamental right tied to equal protection.</div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span>25:06 — Conclusion: “May our children inherit not silence, but courage.”</span>
+        <div class="caret">▼</div>
+      </div>
+      <div class="timeline-content">Booker’s voice cracks slightly as he urges his colleagues to vote with conscience. He ends in silence, receiving a rare standing ovation.</div>
+    </div>
+  </div>
+
+  <!-- YouTube Video at Bottom -->
+  <div class="snapshot-container" style="margin-top: 60px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mVL1OUGFcys?si=Nox4tm2B787OiUxk"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- Toggle Theme -->
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Scroll-triggered appearance
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.timeline-entry').forEach(el => observer.observe(el));
+
+    // Expand/Collapse logic
+    document.querySelectorAll('.timeline-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const entry = header.parentElement;
+        entry.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
