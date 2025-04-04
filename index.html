@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cory Booker's Filibuster Timer</title>
+  <title>A FILIBUSTER TO REMEMBER</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet" />
@@ -12,17 +12,17 @@
     :root {
       --bg-color: #f4f4f4;
       --text-color: #222;
-      --accent-color: #a33;
+      --accent-color: #0b58ff;
     }
 
     body.dark-mode {
       --bg-color: #121212;
       --text-color: #f1f1f1;
-      --accent-color: #ff6b6b;
+      --accent-color: #0b58ff;
     }
 
     body {
-      font-family: 'Raleway', sans-serif;
+      font-family: "Raleway", sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
       text-align: center;
@@ -31,7 +31,6 @@
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
       margin-bottom: 1rem;
       font-size: 2.25rem;
     }
@@ -61,11 +60,12 @@
 
     .celebration {
       margin-top: 2rem;
-      font-size: 1.5rem;
+      font-size: 1rem;
       animation: pop 1s ease-out forwards;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      width: 100%;
+      text-align: left;
     }
 
     iframe {
@@ -90,7 +90,6 @@
       background-color: rgba(0, 0, 0, 0.03);
       border-radius: 4px;
       overflow: hidden;
-      cursor: pointer;
     }
 
     .timeline-entry.visible {
@@ -100,26 +99,27 @@
 
     .timeline-header {
       padding: 1rem;
-      font-weight: bold;
-      color: var(--accent-color);
+      color: var(--text-color);
       background-color: rgba(0, 0, 0, 0.02);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-
-    .timeline-header span {
-      flex: 1;
+      gap: 1rem;
       text-align: left;
+      cursor: pointer;
     }
 
-    .caret {
-      font-size: 1.25rem;
-      transition: transform 0.3s ease;
+    .timeline-header .caret {
+      font-size: 2rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+      width: 1rem;
+      text-align: center;
     }
 
-    .timeline-entry.open .caret {
-      transform: rotate(180deg);
+    .timeline-header .text {
+      flex: 1;
+      line-height: 1.4;
     }
 
     .timeline-content {
@@ -133,6 +133,10 @@
     .timeline-entry.open .timeline-content {
       max-height: 300px;
       padding: 1rem;
+    }
+
+    section#info {
+      padding-right: 2rem;
     }
 
     @media (max-width: 768px) {
@@ -158,66 +162,89 @@
   </style>
 </head>
 <body>
-  <h1>Cory Booker's Filibuster Timer</h1>
+  <h1>A FILIBUSTER TO REMEMBER</h1>
+  <h2>Senator breaks filibuster record to keep funding in schools</h2>
   <div class="timer">Elapsed Time: <strong>25h 6m 0s</strong></div>
   <div class="countdown">🎉 Record broken by 48 minutes! 🎉</div>
 
-  <div class="celebration">
-    <p>On Tuesday April 1, 2025 Cory Booker made history with a filibuster lasting <strong>25 hours and 6 minutes</strong>, surpassing the previous record by <strong>48 minutes</strong>.</p>
-    <p>Booker's filibuster was in protest of a bill that would have cut funding for public schools in low-income neighborhoods. The bill was ultimately defeated in the Senate, and Booker's filibuster was credited with helping to sway the vote.</p>
-    <p>Behind the scenes, Booker's team worked tirelessly to make the historic moment possible. They prepared <strong>1,164 pages</strong> of carefully crafted material—more than the entire <em>Harry Potter</em> series combined, or about <strong>ten full-length novels</strong>. All of it was delivered without a teleprompter over the span of 25 continuous hours.</p>
-  </div>
+  <section id="info">
+    <div class="celebration">
+      <p>On Tuesday April 1, 2025 Cory Booker made history with a filibuster lasting <strong>25 hours and 6 minutes</strong>, surpassing the previous record by <strong>48 minutes</strong>.</p>
+      <p>Booker's filibuster was in protest of a bill that would have cut funding for public schools in low-income neighborhoods. The bill was ultimately defeated in the Senate, and Booker's filibuster was credited with helping to sway the vote.</p>
+      <p>Behind the scenes, Booker's team worked tirelessly to make the historic moment possible. They prepared <strong>1,164 pages</strong> of carefully crafted material—more than the entire <em>Harry Potter</em> series combined, or about <strong>ten full-length novels</strong>. All of it was delivered without a teleprompter over the span of 25 continuous hours.</p>
+    </div>
+  </section>
 
   <!-- Expandable Timeline -->
   <div id="timeline">
     <div class="timeline-entry">
       <div class="timeline-header">
-        <span>0:00 — Opening Remarks: Booker opens by stating his intent to speak until justice speaks louder.</span>
-        <div class="caret">▼</div>
+        <div class="caret">+</div>
+        <div class="text"><p><strong>0:00 — Opening Remarks:</strong> Booker opens by stating his intent to speak until justice speaks louder.</p></div>
       </div>
-      <div class="timeline-content">He expresses frustration with partisan gridlock and invokes a moral obligation to speak out against the proposed education cuts.</div>
+      <div class="timeline-content">
+        He expresses frustration with partisan gridlock and invokes a moral obligation to speak out against the proposed education cuts.
+      </div>
     </div>
+
     <div class="timeline-entry">
       <div class="timeline-header">
-        <span>3:12 — Quoting Maya Angelou: He reads from “Still I Rise” and relates it to the proposed legislation.</span>
-        <div class="caret">▼</div>
+        <div class="caret">+</div>
+        <div class="text"><p><strong>3:12 — Quoting Maya Angelou:</strong> He reads from “Still I Rise” and relates it to the proposed legislation.</p></div>
       </div>
-      <div class="timeline-content">Booker shares how Angelou's words inspired him during moments of political resistance, linking the poem to the resilience of underserved communities.</div>
+      <div class="timeline-content">
+        Booker shares how Angelou's words inspired him during moments of political resistance, linking the poem to the resilience of underserved communities.
+      </div>
     </div>
+
     <div class="timeline-entry">
       <div class="timeline-header">
-        <span>8:45 — Singing “Lean on Me”: A heartfelt moment that draws smiles and attention across the chamber.</span>
-        <div class="caret">▼</div>
+        <div class="caret">+</div>
+        <div class="text"><p><strong>8:45 — Singing “Lean on Me”:</strong> A heartfelt moment that draws smiles and attention across the chamber.</p></div>
       </div>
-      <div class="timeline-content">He sings softly without music, connecting it to the mutual support needed in times of injustice and civic fatigue.</div>
+      <div class="timeline-content">
+        He sings softly without music, connecting it to the mutual support needed in times of injustice and civic fatigue.
+      </div>
     </div>
+
     <div class="timeline-entry">
       <div class="timeline-header">
-        <span>14:20 — Letters from Teachers: Reads emotional testimonies from educators in underserved communities.</span>
-        <div class="caret">▼</div>
+        <div class="caret">+</div>
+        <div class="text"><p><strong>14:20 — Letters from Teachers:</strong> Reads emotional testimonies from educators in underserved communities.</p></div>
       </div>
-      <div class="timeline-content">One teacher described using personal savings to buy books; another shared how reduced funding meant cutting after-school programs.</div>
+      <div class="timeline-content">
+        One teacher described using personal savings to buy books; another shared how reduced funding meant cutting after-school programs.
+      </div>
     </div>
+
     <div class="timeline-entry">
       <div class="timeline-header">
-        <span>17:05 — Reading Dr. Seuss: A dramatic reading from <em>Green Eggs and Ham</em> draws laughter and lightens the mood.</span>
-        <div class="caret">▼</div>
+        <div class="caret">+</div>
+        <div class="text"><p><strong>17:05 — Reading Dr. Seuss:</strong> A dramatic reading from <em>Green Eggs and Ham</em> draws laughter and lightens the mood.</p></div>
       </div>
-      <div class="timeline-content">While humorous, the reading symbolized persistence and the absurdity of obstruction for its own sake—a nod to past Senate antics.</div>
+      <div class="timeline-content">
+        While humorous, the reading symbolized persistence and the absurdity of obstruction for its own sake—a nod to past Senate antics.
+      </div>
     </div>
+
     <div class="timeline-entry">
       <div class="timeline-header">
-        <span>21:30 — Reciting the Constitution: Emphasizes the duty to uphold equity and access to education.</span>
-        <div class="caret">▼</div>
+        <div class="caret">+</div>
+        <div class="text"><p><strong>21:30 — Reciting the Constitution:</strong> Emphasizes the duty to uphold equity and access to education.</p></div>
       </div>
-      <div class="timeline-content">He focuses on the Preamble and Fourteenth Amendment, making the case for education as a fundamental right tied to equal protection.</div>
+      <div class="timeline-content">
+        He focuses on the Preamble and Fourteenth Amendment, making the case for education as a fundamental right tied to equal protection.
+      </div>
     </div>
+
     <div class="timeline-entry">
       <div class="timeline-header">
-        <span>25:06 — Conclusion: “May our children inherit not silence, but courage.”</span>
-        <div class="caret">▼</div>
+        <div class="caret">+</div>
+        <div class="text"><p><strong>25:06 — Conclusion:</strong> “May our children inherit not silence, but courage.”</p></div>
       </div>
-      <div class="timeline-content">Booker’s voice cracks slightly as he urges his colleagues to vote with conscience. He ends in silence, receiving a rare standing ovation.</div>
+      <div class="timeline-content">
+        Booker’s voice cracks slightly as he urges his colleagues to vote with conscience. He ends in silence, receiving a rare standing ovation.
+      </div>
     </div>
   </div>
 
@@ -247,13 +274,16 @@
       });
     }, { threshold: 0.2 });
 
-    document.querySelectorAll('.timeline-entry').forEach(el => observer.observe(el));
+    document.querySelectorAll(".timeline-entry").forEach(el => observer.observe(el));
 
-    // Expand/Collapse logic
-    document.querySelectorAll('.timeline-header').forEach(header => {
-      header.addEventListener('click', () => {
+    // Expand/Collapse logic with +/- toggle
+    document.querySelectorAll(".timeline-header").forEach(header => {
+      header.addEventListener("click", () => {
         const entry = header.parentElement;
-        entry.classList.toggle('open');
+        const caret = header.querySelector(".caret");
+        entry.classList.toggle("open");
+        const isOpen = entry.classList.contains("open");
+        caret.textContent = isOpen ? "−" : "+";
       });
     });
   </script>
